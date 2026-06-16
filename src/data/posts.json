@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Inscrições para a X Edição do Festival de Dança estão abertas!",
+    "date": "10 de Maio, 2026",
+    "excerpt": "Prepare sua coreografia. De 04 a 27 de maio receberemos as inscrições de todos os campi e comunidade externa.",
+    "content": "Estamos entusiasmados em anunciar a abertura oficial das inscrições para a décima edição do nosso consagrado Festival de Dança! Este ano, celebrando uma década de história, arte e conexão cultural no IF Sudeste MG - Campus Barbacena.\n\nO festival receberá inscrições de dançarinos e grupos de todos os campi da instituição, além de dar calorosas boas-vindas à comunidade externa. Se você tem uma coreografia pronta ou quer compartilhar sua paixão pelo palco, esta é a sua oportunidade!\n\nAs inscrições podem ser feitas diretamente pelo nosso portal online de 04 a 27 de maio. Lembre-se de anexar a ficha técnica do grupo, os dados da trilha sonora e os links dos vídeos de ensaio para avaliação prévia da nossa curadoria técnica.\n\nCategorias em destaque este ano incluem: Ballet Clássico, Dança Contemporânea, Jazz, Danças Urbanas e Estilo Livre. Prepare-se para brilhar sob as luzes do Auditório EPCAr!",
+    "img": "https://images.unsplash.com/photo-1547153760-18fc86324498?w=800&q=80",
+    "category": "Oficial"
+  },
+  {
+    "id": 2,
+    "title": "Divulgada a programação oficial com oficinas e apresentações",
+    "date": "02 de Junho, 2026",
+    "excerpt": "Além das mostras competitivas, contaremos com workshops gratuitos de diversas modalidades com profissionais renomados.",
+    "content": "A programação oficial do X Festival de Dança foi finalmente publicada e está repleta de atividades imperdíveis. O evento de dois dias contará não apenas com as emocionantes apresentações competitivas, mas também com uma rica programação de formação artística.\n\nNa parte da manhã, o festival sediará workshops práticos e rodas de conversa. Teremos aulas especiais de Dança Urbana com coreógrafos premiados nacionalmente e sessões de conscientização corporal focadas em Dança Contemporânea.\n\nTodos os workshops são 100% gratuitos e abertos ao público geral, porém as vagas são limitadas por ordem de chegada no local das oficinas. As mostras competitivas principais ocorrerão nos períodos da tarde e noite, prometendo noites mágicas com figurinos deslumbrantes e narrativas emocionantes expressas através dos corpos em movimento.\n\nBaixe a grade horária completa no portal institucional ou acompanhe as atualizações nos nossos canais oficiais para planejar sua visita!",
+    "img": "https://images.unsplash.com/photo-1524593689594-aae6f261e469?w=800&q=80",
+    "category": "Programação"
+  },
+  {
+    "id": 3,
+    "title": "Mostra 10 Anos: Exposição de figurinos históricos no hall principal",
+    "date": "15 de Junho, 2026",
+    "excerpt": "Venha conferir uma pequena parte da nossa história contada através dos figurinos mais marcantes dessa década.",
+    "content": "Para celebrar os 10 anos de fundação do festival, a comissão organizadora preparou uma atração muito especial: a Mostra 10 Anos de Figurinos Históricos.\n\nInstalada no hall de entrada do Auditório EPCAr durante todo o período do festival, a exposição reunirá as roupas mais marcantes e premiadas que passaram pelo palco Barbacenense nessa jornada. Cada figurino é acompanhado por fotografias da apresentação original, informações sobre os coreógrafos e depoimentos em áudio dos bailarinos sobre o que sentiram ao vesti-los.\n\nA curadoria da exposição destaca figurinos que vão desde elaboradas recriações clássicas até peças conceituais contemporâneas feitas com materiais sustentáveis desenvolvidos pelos próprios alunos do campus.\n\nA visitação é livre e gratuita para todos os credenciados e espectadores do festival. Venha vivenciar essa viagem no tempo e tocar na própria textura da nossa história!",
+    "img": "https://images.unsplash.com/photo-1616035824964-bca5419b45be?w=800&q=80",
+    "category": "Exposição"
+  }
+]
