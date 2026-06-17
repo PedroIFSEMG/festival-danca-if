@@ -5,8 +5,8 @@ export default function MapSection() {
   return (
     <section className="py-16 md:py-24 relative overflow-hidden" id="local">
       {/* Ambient glows */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[var(--color-festival-lilac)]/[0.04] rounded-full blur-[120px] transform -translate-y-1/2 translate-x-1/2 z-0" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[var(--color-festival-primary)]/[0.03] rounded-full blur-[120px] transform translate-y-1/2 -translate-x-1/2 z-0" />
+      <div className="absolute top-0 right-0 w-80 h-80 bg-[var(--color-festival-lilac)]/[0.035] rounded-full blur-[80px] transform -translate-y-1/2 translate-x-1/2 z-0" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-[var(--color-festival-primary)]/[0.03] rounded-full blur-[80px] transform translate-y-1/2 -translate-x-1/2 z-0" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -27,7 +27,7 @@ export default function MapSection() {
              
              <div className="glow-border bg-[var(--color-festival-bg)]/60 backdrop-blur-xl p-8 rounded-[1.5rem] border border-[var(--color-festival-text)]/[0.06] space-y-6">
                 <div className="flex items-start space-x-5">
-                   <div className="bg-gradient-to-br from-[var(--color-festival-primary)] to-[var(--color-festival-lilac)] p-4 rounded-2xl text-[var(--color-festival-text)] shrink-0 shadow-[0_8px_25px_rgba(124,58,237,0.3)]">
+                   <div className="bg-gradient-to-br from-[var(--color-festival-primary)] to-[var(--color-festival-lilac)] p-4 rounded-2xl text-[var(--color-festival-text-light)] shrink-0 shadow-[0_8px_25px_rgba(124,58,237,0.3)]">
                       <MapPin size={22} strokeWidth={2} />
                    </div>
                    <div>

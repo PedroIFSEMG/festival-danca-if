@@ -136,45 +136,47 @@ export default function ActionGrid() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative bg-[var(--color-festival-dark-surface)]/95 backdrop-blur-2xl rounded-[2rem] border border-[var(--color-festival-lilac)]/15 shadow-[0_25px_80px_rgba(124,58,237,0.25)] w-full max-w-2xl max-h-[80vh] overflow-y-auto z-10 flex flex-col [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+              className="relative bg-[var(--color-festival-dark-surface)] rounded-[1.5rem] sm:rounded-[2rem] border border-[var(--color-festival-lilac-light)]/30 shadow-[0_25px_80px_rgba(44,26,59,0.22)] w-full max-w-2xl max-h-[82vh] overflow-hidden z-10 flex flex-col"
             >
               {/* Close button */}
               <button
                 onClick={() => setActiveAction(null)}
-                className="absolute top-6 right-6 z-20 text-[var(--color-festival-text-light)]/60 hover:text-[var(--color-festival-text-light)] bg-[var(--color-festival-text-light)]/[0.06] hover:bg-[var(--color-festival-text-light)]/10 p-3 rounded-full transition-all border border-[var(--color-festival-text-light)]/10  cursor-pointer"
+                className="absolute top-3 right-3 sm:top-4 sm:right-4 z-30 text-[var(--color-festival-dark)] bg-[var(--color-festival-text-light)] hover:bg-white p-3 rounded-full transition-colors border border-[var(--color-festival-dark)]/10 shadow-[0_8px_24px_rgba(44,26,59,0.28)] cursor-pointer"
                 aria-label="Fechar detalhes"
               >
                 <X size={18} />
               </button>
 
-              {/* Banner Image */}
-              <div className="relative h-48 sm:h-64 w-full shrink-0 overflow-hidden">
-                <img
-                  src={activeAction.img}
-                  alt=""
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-festival-dark-surface)] via-[var(--color-festival-dark-surface)]/50 to-transparent" />
-              </div>
-
-              {/* Body Content */}
-              <div className="p-6 sm:p-10 pt-4 flex-grow flex flex-col justify-start">
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${activeAction.accent} flex items-center justify-center text-[var(--color-festival-text-light)]`}>
-                    <activeAction.icon size={18} />
-                  </div>
-                  <span className="text-[10px] uppercase font-bold tracking-widest text-[var(--color-festival-text-light)]/70">{activeAction.title}</span>
+              <div className="overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+                {/* Banner Image */}
+                <div className="relative h-48 sm:h-64 w-full shrink-0 overflow-hidden">
+                  <img
+                    src={activeAction.img}
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-festival-dark-surface)] via-[var(--color-festival-dark-surface)]/50 to-transparent" />
                 </div>
 
-                <h3 className="font-serif text-2xl sm:text-4xl font-medium text-[var(--color-festival-text-light)] mb-6 leading-tight">
-                  {activeAction.fullTitle}
-                </h3>
+                {/* Body Content */}
+                <div className="p-6 sm:p-10 pt-4 flex-grow flex flex-col justify-start">
+                  <div className="flex items-center space-x-3 mb-4 pr-12">
+                    <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${activeAction.accent} flex items-center justify-center text-[var(--color-festival-text-light)]`}>
+                      <activeAction.icon size={18} />
+                    </div>
+                    <span className="text-[10px] uppercase font-bold tracking-widest text-[var(--color-festival-lilac-light)]">{activeAction.title}</span>
+                  </div>
 
-                {/* Content paragraphs */}
-                <div className="space-y-4 text-[var(--color-festival-text-light)]/70 font-light text-sm sm:text-base leading-relaxed max-w-none">
-                  {activeAction.details.split('\n\n').map((paragraph, idx) => (
-                    <p key={idx}>{paragraph}</p>
-                  ))}
+                  <h3 className="font-serif text-2xl sm:text-4xl font-medium text-[var(--color-festival-text-light)] mb-6 leading-tight">
+                    {activeAction.fullTitle}
+                  </h3>
+
+                  {/* Content paragraphs */}
+                  <div className="space-y-4 text-[var(--color-festival-text-light)]/90 font-light text-sm sm:text-base leading-relaxed max-w-none">
+                    {activeAction.details.split('\n\n').map((paragraph, idx) => (
+                      <p key={idx}>{paragraph}</p>
+                    ))}
+                  </div>
                 </div>
               </div>
             </motion.div>

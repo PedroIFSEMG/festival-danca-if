@@ -1,6 +1,6 @@
 import { useState, useEffect, type MouseEvent } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Sparkles, Eye, ArrowRight, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Sparkles, ArrowRight, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import img1 from '../assets/gallery/foto-01.jpg';
 import img2 from '../assets/gallery/foto-02.jpg';
 import img3 from '../assets/gallery/foto-03.jpg';
@@ -48,7 +48,7 @@ export default function Gallery() {
   return (
     <section className="py-10 relative z-10" id="galeria">
       {/* Section ambient glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[var(--color-festival-primary)]/[0.04] rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[520px] h-[320px] bg-[var(--color-festival-primary)]/[0.035] rounded-full blur-[80px] pointer-events-none" />
 
       <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -79,7 +79,7 @@ export default function Gallery() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: index * 0.15, duration: 0.8, ease: "easeOut" }}
-              className={`glow-border relative rounded-[1.5rem] overflow-hidden group h-[300px] md:h-auto ${img.span} border border-[var(--color-festival-text)]/[0.08] hover:border-[var(--color-festival-lilac)]/35 transition-all duration-300 cursor-pointer`}
+              className={`glow-border relative rounded-[1.5rem] overflow-hidden group h-[300px] md:h-auto ${img.span} border border-[var(--color-festival-primary)]/45 hover:border-[var(--color-festival-primary)]/80 ring-1 ring-[var(--color-festival-primary)]/15 hover:ring-[var(--color-festival-primary)]/30 transition-all duration-300 cursor-pointer`}
             >
               <img 
                 src={img.url} 
@@ -87,7 +87,7 @@ export default function Gallery() {
                 className="w-full h-full object-cover transition-transform duration-700 ease-out"
               />
               {/* Dark overlay with gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-festival-bg)] via-[var(--color-festival-bg)]/40 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-festival-bg)]/88 via-[var(--color-festival-bg)]/22 to-transparent opacity-65 group-hover:opacity-80 transition-opacity duration-300" />
               
               <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-8">
                  <div className="flex items-center space-x-2 mb-3">
@@ -95,13 +95,10 @@ export default function Gallery() {
                       {img.category}
                     </span>
                  </div>
-                 <h3 className="text-[var(--color-festival-text)] font-serif text-2xl sm:text-3xl font-medium tracking-wide mb-1 leading-tight">{img.title}</h3>
-                 
-                 <div className="mt-5 flex items-center text-[var(--color-festival-text)]/65 group-hover:text-[var(--color-festival-text)] transition-colors duration-300 cursor-pointer">
-                    <div className="w-10 h-10 rounded-full bg-[var(--color-festival-text)]/[0.08] backdrop-blur-md flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-[var(--color-festival-primary)] group-hover:to-[var(--color-festival-lilac)] transition-all duration-300 border border-[var(--color-festival-text)]/10 group-hover:border-transparent group-hover:text-white">
-                       <Eye size={16} />
-                    </div>
+                 <div className="min-w-0 w-full max-w-[32rem] rounded-2xl bg-[var(--color-festival-dark)]/58 px-4 py-3 backdrop-blur-xl border border-[var(--color-festival-text-light)]/18 shadow-[0_14px_40px_rgba(44,26,59,0.28)] ring-1 ring-white/10">
+                   <h3 className="max-w-full overflow-hidden text-[var(--color-festival-text-light)] font-serif text-xl sm:text-2xl md:text-3xl font-medium tracking-wide leading-tight break-words [overflow-wrap:anywhere] [hyphens:auto] line-clamp-3">{img.title}</h3>
                  </div>
+                 
               </div>
             </motion.div>
           ))}
@@ -131,7 +128,7 @@ export default function Gallery() {
             >
               <button
                 onClick={() => setSelectedImageIndex(null)}
-                className="absolute -top-12 right-0 md:-right-12 z-20 text-[var(--color-festival-text-light)]/60 hover:text-[var(--color-festival-text-light)] bg-[var(--color-festival-text-light)]/[0.06] hover:bg-[var(--color-festival-text-light)]/10 p-3 rounded-full transition-all border border-[var(--color-festival-text-light)]/10 cursor-pointer"
+                className="fixed top-20 right-4 sm:top-4 z-30 text-[var(--color-festival-dark)] bg-[var(--color-festival-text-light)] hover:bg-white p-3 rounded-full transition-colors border border-[var(--color-festival-dark)]/10 shadow-[0_8px_24px_rgba(44,26,59,0.28)] cursor-pointer"
                 aria-label="Fechar"
               >
                 <X size={20} />

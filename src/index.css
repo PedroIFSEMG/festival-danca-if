@@ -13,6 +13,7 @@
   --color-festival-primary: #5e366a;      /* Deep purple accent */
   --color-festival-lilac: #a372a8;         /* Muted purple (body accent text) */
   --color-festival-lilac-light: #e6d8e8;   /* Very light tint */
+  --color-festival-rose: #b43f62;
   --color-festival-light: #fbf8fc;
   --color-festival-bg: #f4eef5;            /* Page background */
   --color-festival-text: #2c1a3b;          /* Primary text — maximum contrast */
@@ -20,7 +21,7 @@
   --color-festival-text-soft: #5e366a;     /* Secondary text — still strong */
   --color-festival-gold: #b88a4a;          /* Warmer, darker gold (legible on light bg) */
 
-  --animate-marquee: marquee 30s linear infinite;
+  --animate-marquee: marquee 48s linear infinite;
 
   @keyframes marquee {
     0% { transform: translateX(0%); }
@@ -115,7 +116,7 @@ html {
     var(--color-festival-primary)
   );
   background-size: 300% 300%;
-  animation: auroraShift 8s ease infinite;
+  animation: none;
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
@@ -127,6 +128,7 @@ html {
 
 .glow-border:hover::before {
   opacity: 1;
+  animation: auroraShift 14s ease infinite;
 }
 
 /* ======================================
@@ -148,7 +150,7 @@ html {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
-  animation: shine 6s ease-in-out infinite alternate;
+  animation: shine 12s ease-in-out infinite alternate;
 }
 
 .text-gradient-gold {
@@ -170,6 +172,152 @@ html {
 @keyframes shine {
   to {
     background-position: 250% center;
+  }
+}
+
+@keyframes dancerReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) rotate(3deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes dancerFloat {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  12% {
+    transform: translate3d(8px, -10px, 0) rotate(1.8deg);
+  }
+  23% {
+    transform: translate3d(-5px, -18px, 0) rotate(-2.4deg);
+  }
+  37% {
+    transform: translate3d(10px, 6px, 0) rotate(2.7deg);
+  }
+  49% {
+    transform: translate3d(-9px, 12px, 0) rotate(-1.9deg);
+  }
+  61% {
+    transform: translate3d(6px, -7px, 0) rotate(1.2deg);
+  }
+  73% {
+    transform: translate3d(-7px, 9px, 0) rotate(-2.8deg);
+  }
+  86% {
+    transform: translate3d(4px, -13px, 0) rotate(2deg);
+  }
+}
+
+@keyframes dancerStageDrift {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  16% {
+    transform: translate3d(2px, -4px, 0) scale(1.005);
+  }
+  34% {
+    transform: translate3d(-3px, 3px, 0) scale(0.995);
+  }
+  52% {
+    transform: translate3d(4px, -2px, 0) scale(1.006);
+  }
+  68% {
+    transform: translate3d(-2px, 4px, 0) scale(0.998);
+  }
+  84% {
+    transform: translate3d(3px, -3px, 0) scale(1.004);
+  }
+}
+
+.dancer-stage {
+  animation: dancerReveal 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-name: dancerReveal, dancerStageDrift;
+  animation-duration: 1.2s, 15s;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1), ease-in-out;
+  animation-fill-mode: both, both;
+  animation-iteration-count: 1, infinite;
+}
+
+.dancer-float {
+  animation: dancerFloat 12s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+  transform-origin: 50% 55%;
+  scale: 1;
+  transition: scale 0.45s ease, filter 0.45s ease;
+  will-change: transform;
+}
+
+.dancer-float:hover {
+  scale: 1.02;
+  filter: saturate(1.04) contrast(1.02);
+}
+
+.sponsor-marquee {
+  animation: marquee 34s linear infinite;
+}
+
+.sponsor-marquee:hover {
+  animation-play-state: paused;
+}
+
+.ribbon-veil {
+  opacity: 0.3;
+  mix-blend-mode: multiply;
+}
+
+.ribbon-band {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ribbonDrift 14s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.ribbon-band-core,
+.ribbon-band-glow {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.ribbon-band-glow {
+  opacity: 0.16;
+}
+
+.ribbon-one {
+  animation-duration: 12s;
+  animation-delay: -2s;
+}
+
+.ribbon-two {
+  animation-duration: 15s;
+  animation-delay: -5s;
+}
+
+.ribbon-three {
+  animation-duration: 18s;
+  animation-delay: -8s;
+}
+
+@keyframes ribbonDrift {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scaleX(1);
+    opacity: 0.28;
+  }
+  25% {
+    transform: translate3d(16px, -7px, 0) scaleX(1.012);
+    opacity: 0.34;
+  }
+  50% {
+    transform: translate3d(-12px, 5px, 0) scaleX(0.994);
+    opacity: 0.24;
+  }
+  75% {
+    transform: translate3d(10px, -3px, 0) scaleX(1.01);
+    opacity: 0.31;
   }
 }
 

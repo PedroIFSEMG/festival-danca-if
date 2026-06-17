@@ -1,4 +1,3 @@
-import { motion } from 'motion/react';
 import { SPONSORS } from '../constants';
 
 export default function Sponsors() {
@@ -23,7 +22,7 @@ export default function Sponsors() {
         <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[var(--color-festival-bg)] to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[var(--color-festival-bg)] to-transparent z-10 pointer-events-none" />
 
-        <div className="animate-marquee flex items-center whitespace-nowrap w-max py-4">
+        <div className="sponsor-marquee flex items-center whitespace-nowrap w-max py-4">
           {[...SPONSORS, ...SPONSORS].map((sponsor, index) => (
             <div key={`${sponsor.id}-${index}`} className="mx-5 flex-none w-52 bg-[var(--color-festival-bg)]/60 backdrop-blur-xl px-6 py-5 rounded-2xl border border-[var(--color-festival-primary)]/20 hover:border-[var(--color-festival-primary)]/50 transition-all duration-500 flex items-center justify-center group cursor-pointer">
                {sponsor.img ? (

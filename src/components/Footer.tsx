@@ -14,12 +14,12 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <img src={logoImg} alt="Logo do festival" className="h-10 w-auto" />
             </div>
-            <div className="font-serif text-xl tracking-[0.15em] font-medium text-[var(--color-festival-primary)] uppercase leading-tight">
+            <div className="font-serif text-xl tracking-[0.15em] font-medium text-[var(--color-festival-lilac-light)] uppercase leading-tight">
               <span className="font-roman text-[var(--color-festival-text-light)] pr-0.5 select-none">X</span> Festival<br />de Dança
             </div>
             <p className="text-[var(--color-festival-text-light)]/50 font-light text-sm leading-relaxed max-w-xs">
               Há 10 anos celebrando a arte e o movimento.<br />
-              Realização <span className="text-[var(--color-festival-primary)]/80">IF Sudeste MG</span> – Campus Barbacena.
+              Realização <span className="text-[var(--color-festival-lilac-light)]">IF Sudeste MG</span> – Campus Barbacena.
             </p>
             <div className="flex space-x-3">
               <a href="#" className="w-9 h-9 rounded-full bg-[var(--color-festival-primary)]/10 border border-[var(--color-festival-primary)]/20 flex items-center justify-center hover:bg-[var(--color-festival-primary)]/25 transition-colors">
@@ -33,7 +33,7 @@ export default function Footer() {
 
           {/* Quick links */}
           <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
-            <h4 className="font-serif text-base mb-5 text-[var(--color-festival-primary)] uppercase tracking-widest">Links Rápidos</h4>
+            <h4 className="font-serif text-base mb-5 text-[var(--color-festival-lilac-light)] uppercase tracking-widest">Links Rápidos</h4>
             <ul className="space-y-3 text-[var(--color-festival-text-light)]/55 font-light text-sm">
               {[
                 { href: '#historia', label: 'Nossa História' },
@@ -43,7 +43,7 @@ export default function Footer() {
                 { href: '#local',    label: 'Local' },
               ].map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="hover:text-[var(--color-festival-primary)] transition-colors duration-200">
+                  <a href={link.href} className="hover:text-[var(--color-festival-lilac-light)] transition-colors duration-200">
                     {link.label}
                   </a>
                 </li>
@@ -53,14 +53,14 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
-            <h4 className="font-serif text-base mb-5 text-[var(--color-festival-primary)] uppercase tracking-widest">Contato</h4>
+            <h4 className="font-serif text-base mb-5 text-[var(--color-festival-lilac-light)] uppercase tracking-widest">Contato</h4>
             <ul className="space-y-4 text-[var(--color-festival-text-light)]/55 font-light text-sm">
               <li className="flex items-start gap-2.5 justify-center sm:justify-start">
-                <Mail className="shrink-0 mt-0.5 text-[var(--color-festival-lilac)]" size={16} />
+                <Mail className="shrink-0 mt-0.5 text-[var(--color-festival-lilac-light)]" size={16} />
                 <span>festivaldedanca@<br />ifsudestemg.edu.br</span>
               </li>
               <li className="flex items-center gap-2.5 justify-center sm:justify-start">
-                <Phone className="shrink-0 text-[var(--color-festival-lilac)]" size={16} />
+                <Phone className="shrink-0 text-[var(--color-festival-lilac-light)]" size={16} />
                 <span>(32) 3693-0000</span>
               </li>
             </ul>
@@ -91,8 +91,8 @@ export default function Footer() {
             © {new Date().getFullYear()} <span className="font-roman text-[var(--color-festival-text-light)]/60 select-none">X</span> Festival de Dança IF Sudeste MG. Todos os direitos reservados.
           </p>
           <div className="flex gap-5">
-            <a href="#" className="hover:text-[var(--color-festival-primary)] transition-colors">Termos de Uso</a>
-            <a href="#" className="hover:text-[var(--color-festival-primary)] transition-colors">Privacidade</a>
+            <a href="#" className="hover:text-[var(--color-festival-lilac-light)] transition-colors">Termos de Uso</a>
+            <a href="#" className="hover:text-[var(--color-festival-lilac-light)] transition-colors">Privacidade</a>
           </div>
         </div>
 

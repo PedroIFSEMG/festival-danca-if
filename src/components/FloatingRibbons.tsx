@@ -1,59 +1,91 @@
-import { motion } from 'motion/react';
-
 const ribbons = [
   {
-    id: "ribbon1",
-    strokeWidth: 3,
-    gradientId: "satinGrad1",
-    duration: 20,
-    dInitial: "M -20 40 C 40 10, 80 45, 120 15 S 160 40, 220 30",
-    dAnimate: "M -20 30 C 50 45, 70 15, 110 35 S 170 10, 220 25",
+    id: 'ribbon1',
+    className: 'ribbon-one',
+    gradientId: 'ribbonGrad1',
+    stroke: 24,
+    glow: 48,
+    y: 92,
   },
   {
-    id: "ribbon2",
-    strokeWidth: 2,
-    gradientId: "satinGrad2",
-    duration: 28,
-    dInitial: "M 220 35 C 160 15, 120 45, 80 15 S 40 35, -20 25",
-    dAnimate: "M 220 25 C 170 35, 130 10, 90 40 S 30 20, -20 30",
+    id: 'ribbon2',
+    className: 'ribbon-two',
+    gradientId: 'ribbonGrad2',
+    stroke: 20,
+    glow: 40,
+    y: 148,
+  },
+  {
+    id: 'ribbon3',
+    className: 'ribbon-three',
+    gradientId: 'ribbonGrad3',
+    stroke: 16,
+    glow: 32,
+    y: 208,
   },
 ];
 
 export default function FloatingRibbons() {
   return (
-    <div className="absolute bottom-0 left-0 right-0 h-[250px] pointer-events-none overflow-hidden opacity-30 mix-blend-multiply z-0">
-      <svg className="w-full h-full" viewBox="0 0 200 50" preserveAspectRatio="none">
+    <div className="absolute inset-x-0 bottom-0 h-[260px] pointer-events-none overflow-hidden z-0 ribbon-veil" aria-hidden="true">
+      <svg className="w-full h-full" viewBox="0 0 1440 260" preserveAspectRatio="none">
         <defs>
-          <linearGradient id="satinGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <linearGradient id="ribbonGrad1" x1="0%" y1="50%" x2="100%" y2="50%">
             <stop offset="0%" stopColor="#2c1a3b" stopOpacity="0" />
-            <stop offset="25%" stopColor="#5e366a" stopOpacity="0.75" />
-            <stop offset="50%" stopColor="#a372a8" stopOpacity="0.8" />
-            <stop offset="75%" stopColor="#5e366a" stopOpacity="0.75" />
+            <stop offset="25%" stopColor="#5e366a" stopOpacity="0.88" />
+            <stop offset="50%" stopColor="#a372a8" stopOpacity="0.96" />
+            <stop offset="75%" stopColor="#5e366a" stopOpacity="0.86" />
             <stop offset="100%" stopColor="#2c1a3b" stopOpacity="0" />
           </linearGradient>
 
-          <linearGradient id="satinGrad2" x1="0%" y1="100%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#5e366a" stopOpacity="0" />
-            <stop offset="30%" stopColor="#5e366a" stopOpacity="0.75" />
-            <stop offset="65%" stopColor="#a372a8" stopOpacity="0.75" />
-            <stop offset="100%" stopColor="#e6d8e8" stopOpacity="0" />
+          <linearGradient id="ribbonGrad2" x1="0%" y1="50%" x2="100%" y2="50%">
+            <stop offset="0%" stopColor="#2c1a3b" stopOpacity="0" />
+            <stop offset="28%" stopColor="#b43f62" stopOpacity="0.82" />
+            <stop offset="56%" stopColor="#e6d8e8" stopOpacity="0.95" />
+            <stop offset="82%" stopColor="#a372a8" stopOpacity="0.88" />
+            <stop offset="100%" stopColor="#2c1a3b" stopOpacity="0" />
+          </linearGradient>
+
+          <linearGradient id="ribbonGrad3" x1="0%" y1="50%" x2="100%" y2="50%">
+            <stop offset="0%" stopColor="#2c1a3b" stopOpacity="0" />
+            <stop offset="28%" stopColor="#b88a4a" stopOpacity="0.78" />
+            <stop offset="52%" stopColor="#f4eef5" stopOpacity="0.9" />
+            <stop offset="78%" stopColor="#a372a8" stopOpacity="0.84" />
+            <stop offset="100%" stopColor="#2c1a3b" stopOpacity="0" />
           </linearGradient>
         </defs>
 
-        {ribbons.map((ribbon) => (
-          <g key={ribbon.id}>
-            <motion.path
-              fill="none"
-              stroke={`url(#${ribbon.gradientId})`}
-              strokeWidth={ribbon.strokeWidth}
-              strokeLinecap="round"
-              style={{ willChange: 'transform' }}
-              initial={{ d: ribbon.dInitial }}
-              animate={{ d: [ribbon.dInitial, ribbon.dAnimate, ribbon.dInitial] }}
-              transition={{ duration: ribbon.duration, repeat: Infinity, ease: "easeInOut" }}
-            />
-          </g>
-        ))}
+        <g>
+          {ribbons.map((ribbon) => {
+            const path = `M -140 ${ribbon.y} H 1580`;
+
+            return (
+              <g key={ribbon.id} className={`ribbon-band ${ribbon.className}`}>
+                <path
+                  className="ribbon-band-glow"
+                  d={path}
+                  fill="none"
+                  stroke={`url(#${ribbon.gradientId})`}
+                  strokeWidth={ribbon.glow}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  vectorEffect="non-scaling-stroke"
+                  opacity="0.16"
+                />
+                <path
+                  className="ribbon-band-core"
+                  d={path}
+                  fill="none"
+                  stroke={`url(#${ribbon.gradientId})`}
+                  strokeWidth={ribbon.stroke}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  vectorEffect="non-scaling-stroke"
+                />
+              </g>
+            );
+          })}
+        </g>
       </svg>
     </div>
   );

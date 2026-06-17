@@ -45,8 +45,8 @@ export default function Countdown() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--color-festival-primary)]/[0.03] to-transparent pointer-events-none z-0" />
       
       {/* Ambient glows */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[var(--color-festival-primary)]/10 rounded-full blur-[120px] z-0" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[var(--color-festival-primary)]/[0.06] rounded-full blur-[120px] z-0" />
+      <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-[var(--color-festival-primary)]/[0.08] rounded-full blur-[80px] z-0" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[var(--color-festival-primary)]/[0.05] rounded-full blur-[80px] z-0" />
       
       <div className="max-w-5xl mx-auto px-4 relative z-10 text-center">
         <motion.div

@@ -5,9 +5,9 @@
 
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Countdown from './components/Countdown';
 import ActionGrid from './components/ActionGrid';
 import Sponsors from './components/Sponsors';
-import Countdown from './components/Countdown';
 import Gallery from './components/Gallery';
 import News from './components/News';
 import MapSection from './components/MapSection';
@@ -20,9 +20,9 @@ export default function App() {
       <BackgroundBlobs />
       <Navbar />
       <Hero />
+      <Countdown />
       <ActionGrid />
       <Sponsors />
-      <Countdown />
       <Gallery />
       <News />
       <MapSection />

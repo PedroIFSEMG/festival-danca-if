@@ -38,14 +38,14 @@ export default function Navbar() {
           </div>
 
           {/* Mobile: title absolutely centered */}
-          <span className="md:hidden absolute left-1/2 -translate-x-1/2 text-[10px] tracking-[0.12em] text-[var(--color-festival-text)]/75 font-semibold uppercase whitespace-nowrap pointer-events-none">
-            <span className="text-[var(--color-festival-primary)] font-bold">X</span> Festival
+          <span className="md:hidden absolute left-1/2 -translate-x-1/2 font-serif text-sm tracking-tight text-[var(--color-festival-primary)] font-bold whitespace-nowrap pointer-events-none">
+            X Festival
           </span>
 
           {/* Desktop: divider + title + divider + links */}
           <div className="hidden md:flex items-center gap-2 flex-shrink-0">
             <div className="w-px h-5 bg-[var(--color-festival-primary)]/20" />
-            <span className="text-[11px] lg:text-xs tracking-[0.18em] text-[var(--color-festival-text)]/80 font-semibold uppercase whitespace-nowrap">
+            <span className="font-serif text-base lg:text-lg leading-none tracking-tight text-[var(--color-festival-primary)] font-bold whitespace-nowrap">
               <span className="text-[var(--color-festival-primary)] font-bold">X</span> Festival de Dança
             </span>
             <div className="w-px h-5 bg-[var(--color-festival-primary)]/20" />
