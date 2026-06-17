@@ -21,8 +21,10 @@ export default function Navbar() {
       <nav className="
         w-[90%] md:w-fit md:max-w-[calc(100vw-2rem)]
         rounded-full
-        bg-[var(--color-festival-bg)]/85 backdrop-blur-2xl
-        border border-[var(--color-festival-lilac)]/20
+        bg-[var(--color-festival-bg)]/58 backdrop-blur-2xl
+        border border-white/35
+        shadow-[0_18px_50px_rgba(44,26,59,0.16),inset_0_1px_0_rgba(255,255,255,0.45)]
+        ring-1 ring-[var(--color-festival-primary)]/10
         px-3 py-2
       ">
         <div className="flex items-center justify-between md:justify-start gap-2 sm:gap-3 relative">
@@ -56,7 +58,7 @@ export default function Navbar() {
               <a
                 key={item.href}
                 href={item.href}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[var(--color-festival-text)]/65 hover:text-[var(--color-festival-text)] hover:bg-[var(--color-festival-primary)]/[0.08] transition-all duration-200 text-[11px] font-semibold uppercase tracking-[0.08em] group whitespace-nowrap"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[var(--color-festival-text)]/68 hover:text-[var(--color-festival-text)] hover:bg-white/35 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] transition-all duration-200 text-[11px] font-semibold uppercase tracking-[0.08em] group whitespace-nowrap"
               >
                 <span className="text-xs text-[var(--color-festival-lilac)]/70 group-hover:text-[var(--color-festival-primary)] transition-colors duration-200 flex items-center">{item.icon}</span>
                 <span className="hidden lg:inline">{item.label}</span>
@@ -64,7 +66,7 @@ export default function Navbar() {
             ))}
             <a
               href="#local"
-              className="flex items-center gap-1.5 ml-1 px-4 py-1.5 rounded-full bg-gradient-to-r from-[var(--color-festival-primary)] to-[var(--color-festival-lilac)] text-[var(--color-festival-text-light)] text-[11px] font-bold uppercase tracking-[0.08em] whitespace-nowrap"
+              className="flex items-center gap-1.5 ml-1 px-4 py-1.5 rounded-full bg-[var(--color-festival-primary)]/88 backdrop-blur-xl border border-white/20 shadow-[0_8px_22px_rgba(94,54,106,0.22)] text-[var(--color-festival-text-light)] text-[11px] font-bold uppercase tracking-[0.08em] whitespace-nowrap"
             >
               <span className="text-xs flex items-center"><RiMapPinFill /></span>
               <span className="hidden lg:inline">Local</span>
@@ -75,7 +77,7 @@ export default function Navbar() {
           <div className="flex md:hidden items-center flex-shrink-0">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-[var(--color-festival-text)]/80 hover:text-[var(--color-festival-text)] bg-[var(--color-festival-primary)]/[0.08] p-2 rounded-full border border-[var(--color-festival-primary)]/15 hover:border-[var(--color-festival-primary)]/30 transition-all"
+              className="text-[var(--color-festival-text)]/80 hover:text-[var(--color-festival-text)] bg-white/32 backdrop-blur-xl p-2 rounded-full border border-white/35 hover:border-[var(--color-festival-primary)]/30 transition-all"
               aria-label={isOpen ? 'Fechar Menu' : 'Abrir Menu'}
             >
               {isOpen ? <X size={16} /> : <Menu size={16} />}
@@ -87,7 +89,7 @@ export default function Navbar() {
 
       {/* ── Mobile dropdown ──────────────────────────────────────────── */}
       {isOpen && (
-        <div className="md:hidden mt-2 w-[90%] rounded-[1.5rem] bg-[var(--color-festival-bg)]/95 backdrop-blur-2xl border border-[var(--color-festival-lilac)]/20 overflow-hidden">
+        <div className="md:hidden mt-2 w-[90%] rounded-[1.5rem] bg-[var(--color-festival-bg)]/68 backdrop-blur-2xl border border-white/35 shadow-[0_18px_50px_rgba(44,26,59,0.16),inset_0_1px_0_rgba(255,255,255,0.45)] overflow-hidden">
           <div className="px-5 py-5 flex flex-col items-stretch gap-1">
             {navItems.map((item) => (
               <a

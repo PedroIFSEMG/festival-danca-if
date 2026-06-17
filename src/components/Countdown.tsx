@@ -61,10 +61,10 @@ export default function Countdown() {
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto">
                 {items.map((item) => (
-                   <div key={item.label} className="glow-border group relative overflow-hidden rounded-2xl md:rounded-3xl bg-[var(--color-festival-bg)]/60 backdrop-blur-xl border border-[var(--color-festival-text)]/[0.06] hover:border-[var(--color-festival-lilac)]/20 transition-all duration-500 ">
+                   <div key={item.label} className="glow-border group relative overflow-hidden rounded-2xl md:rounded-3xl bg-white/18 backdrop-blur-2xl border border-white/35 shadow-[0_18px_50px_rgba(44,26,59,0.12),inset_0_1px_0_rgba(255,255,255,0.38)] ring-1 ring-[var(--color-festival-primary)]/10 hover:bg-white/26 hover:border-white/50 transition-all duration-500">
                       <div className="p-6 md:p-8 relative z-10">
                         {/* Hover glow */}
-                        <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-[0.06] transition-opacity duration-700`} />
+                        <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-[0.04] group-hover:opacity-[0.10] transition-opacity duration-700`} />
                         
                         <div className={`text-6xl md:text-7xl font-serif font-black italic mb-2 text-transparent bg-clip-text bg-gradient-to-br ${item.color} drop-shadow-[0_2px_20px_rgba(124,58,237,0.3)] relative z-10`}>
                           {item.value.toString().padStart(2, '0')}
