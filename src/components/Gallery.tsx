@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type MouseEvent } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, Eye, ArrowRight, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import img1 from '../assets/gallery/foto-01.jpg';
@@ -31,14 +31,14 @@ export default function Gallery() {
     };
   }, [selectedImageIndex]);
 
-  const nextImage = (e: React.MouseEvent) => {
+  const nextImage = (e: MouseEvent) => {
     e.stopPropagation();
     if (selectedImageIndex !== null) {
       setSelectedImageIndex((selectedImageIndex + 1) % images.length);
     }
   };
 
-  const prevImage = (e: React.MouseEvent) => {
+  const prevImage = (e: MouseEvent) => {
     e.stopPropagation();
     if (selectedImageIndex !== null) {
       setSelectedImageIndex((selectedImageIndex - 1 + images.length) % images.length);
