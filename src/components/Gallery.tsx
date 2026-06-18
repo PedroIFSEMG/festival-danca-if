@@ -74,14 +74,14 @@ export default function Gallery() {
 
       <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="flex flex-col items-center text-center mb-10 md:mb-12 pb-6 border-b border-[var(--color-festival-text)]/[0.06]">
+        <div className="flex flex-col items-center text-center md:items-start md:text-left mb-10 md:mb-12 pb-6 border-b border-[var(--color-festival-text)]/[0.06]">
             <div className="max-w-3xl relative">
-                <Sparkles className="absolute -top-10 left-1/2 -translate-x-1/2 text-[var(--color-festival-gold)]/20 w-12 h-12 animate-pulse" />
+                <Sparkles className="absolute -top-10 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 text-[var(--color-festival-gold)]/20 w-12 h-12 animate-pulse" />
                 <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-[var(--color-festival-lilac)]/60 mb-4 block">Momentos eternizados.</span>
                 <h2 className="font-serif text-5xl md:text-7xl font-medium text-[var(--color-festival-text)] mb-4 tracking-tight">
                   Momentos <span className="italic text-[var(--color-festival-primary)] drop-shadow-sm">Eternizados</span>
                 </h2>
-                <p className="text-lg md:text-xl text-[var(--color-festival-text)]/70 font-light max-w-2xl mx-auto mt-6">Os momentos mais marcantes capturados na última década e suas coreografias inesquecíveis.</p>
+                <p className="text-lg md:text-xl text-[var(--color-festival-text)]/70 font-light max-w-2xl mx-auto md:mx-0 mt-6">Os momentos mais marcantes capturados na última década e suas coreografias inesquecíveis.</p>
             </div>
             <button 
               onClick={() => setSelectedImageIndex(0)}

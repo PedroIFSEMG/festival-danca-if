@@ -59,7 +59,7 @@ export default function Countdown() {
             <h2 className="font-serif text-5xl md:text-7xl font-medium mb-3 tracking-wide text-[var(--color-festival-text)]">Próximo <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-festival-gold)] to-[var(--color-festival-rose)]">Evento</span></h2>
             <p className="text-[var(--color-festival-text)]/60 tracking-[0.2em] uppercase text-xs lg:text-sm font-bold mb-10 md:mb-12"><span className="font-roman text-[var(--color-festival-gold)] pr-0.5 select-none">X</span> Festival de Dança • Campus Barbacena</p>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto text-center">
                 {items.map((item) => (
                    <div key={item.label} className="glow-border group relative overflow-hidden rounded-2xl md:rounded-3xl bg-white/18 backdrop-blur-2xl border border-white/35 shadow-[0_18px_50px_rgba(44,26,59,0.12),inset_0_1px_0_rgba(255,255,255,0.38)] ring-1 ring-[var(--color-festival-primary)]/10 hover:bg-white/26 hover:border-white/50 transition-all duration-500">
                       <div className="p-6 md:p-8 relative z-10">

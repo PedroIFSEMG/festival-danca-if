@@ -19,7 +19,7 @@ export default function Navbar() {
       <nav className="
         w-[90%] md:w-fit md:max-w-[calc(100vw-2rem)]
         rounded-full
-        bg-white/50 backdrop-blur-[20px] backdrop-brightness-900
+        bg-white/60 backdrop-blur-[10px] backdrop-saturate-200 backdrop-brightness-600
         border border-white/55
         px-4 py-2
       ">
@@ -27,7 +27,7 @@ export default function Navbar() {
 
           {/* Logos */}
           <div className="flex items-center gap-2 flex-shrink-0">
-            <img src={logoImg} alt="Logo do festival" className="h-7 sm:h-8 w-auto drop-shadow-[0_0_6px_rgba(192,132,252,0.3)]" />
+            <img src={logoImg} alt="Logo do festival" className="h-7 sm:h-8 w-auto" />
             <img
               src="https://www.ifsudestemg.edu.br/comunicacao-social/logos/if-sudeste-mg/logo_horizontal_ifsudestemg%282%29.png"
               alt="IF Sudeste MG"
