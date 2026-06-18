@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowDown, ArrowRight, MapPinned } from 'lucide-react';
+import { ArrowDown, Images, MapPinned } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -37,18 +37,25 @@ export default function Hero() {
 
           {/* Banner Image Side (Hero focus) */}
           <div className="lg:col-span-7 order-2 lg:order-2 w-full flex justify-center lg:justify-end relative mt-2 lg:mt-0">
-            <div
-              className="dancer-stage relative w-full max-w-[360px] sm:max-w-[450px] lg:max-w-none flex flex-col lg:flex-row justify-center items-center"
-            >
-              {/* Radial glow behind dancer */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-[radial-gradient(ellipse_at_center,rgba(192,132,252,0.12)_0%,rgba(124,58,237,0.06)_40%,transparent_70%)] z-0" />
+            <div className="relative w-full max-w-[360px] sm:max-w-[450px] lg:max-w-none">
+              <div
+                className="dancer-stage relative w-full flex flex-col lg:flex-row justify-center items-center"
+              >
+                {/* Radial glow behind dancer */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-[radial-gradient(ellipse_at_center,rgba(192,132,252,0.12)_0%,rgba(124,58,237,0.06)_40%,transparent_70%)] z-0" />
 
-              {/* The Image */}
-              <img
-                src="https://i.postimg.cc/gjf1syBp/dancer.png"
-                alt="Dançarina - Banner Oficial do X Festival de Dança"
-                className="dancer-float relative w-full h-auto object-contain z-10 drop-shadow-[0_20px_50px_rgba(124,58,237,0.3)] cursor-pointer"
-              />
+                {/* The Image */}
+                <img
+                  src="https://i.postimg.cc/gjf1syBp/dancer.png"
+                  alt="Dançarina - Banner Oficial do X Festival de Dança"
+                  className="dancer-float relative w-full h-auto object-contain z-10 drop-shadow-[0_20px_50px_rgba(124,58,237,0.3)] cursor-pointer"
+                />
+              </div>
+              <div className="absolute left-3 bottom-5 sm:left-6 sm:bottom-7 lg:left-10 lg:bottom-9 z-20 flex min-h-[5.1rem] w-[6.1rem] flex-col items-center justify-center rounded-xl border border-[var(--color-festival-primary)]/18 bg-transparent px-2.5 py-2 opacity-65 shadow-[0_10px_26px_rgba(44,26,59,0.10)]">
+                <span className="text-[var(--color-festival-primary)] font-bold uppercase tracking-[0.2em] text-[8px]">Data</span>
+                <span className="whitespace-nowrap font-serif text-[1.9rem] leading-none font-bold text-transparent bg-clip-text bg-gradient-to-br from-[var(--color-festival-primary)] to-[var(--color-festival-lilac)]">27-28</span>
+                <span className="mt-1.5 text-[var(--color-festival-primary)] uppercase tracking-[0.2em] text-[8px] font-bold">Junho</span>
+              </div>
             </div>
           </div>
 
@@ -76,21 +83,16 @@ export default function Hero() {
               </h1>
 
               <div className="max-w-xl mx-auto lg:mx-0">
-                <div className="grid grid-cols-1 sm:grid-cols-[minmax(8.5rem,10rem)_1fr] items-center gap-4 sm:gap-6 mb-7">
-                  <div className="relative z-20 flex min-h-[8.5rem] w-full max-w-[11rem] sm:max-w-none mx-auto sm:mx-0 flex-col items-center justify-center overflow-hidden rounded-2xl bg-[var(--color-festival-bg)]/45 px-4 pt-4 pb-3 border border-[var(--color-festival-primary)]/20 shadow-[0_10px_30px_rgba(44,26,59,0.12)]">
-                    <span className="text-[var(--color-festival-primary)] font-bold uppercase tracking-[0.28em] text-[10px] lg:text-xs">Data</span>
-                    <span className="font-serif text-[2.75rem] sm:text-5xl lg:text-[3.8rem] leading-none font-bold text-transparent bg-clip-text bg-gradient-to-br from-[var(--color-festival-primary)] to-[var(--color-festival-lilac)]">27-28</span>
-                    <span className="mt-3 w-full rounded-full bg-[var(--color-festival-primary)] px-3 py-1.5 text-center text-[var(--color-festival-text-light)] uppercase tracking-[0.22em] text-[10px] lg:text-xs font-bold">Junho</span>
-                  </div>
-                  <p className="max-w-[34rem] text-[var(--color-festival-text)] text-center sm:text-left font-medium text-[14px] sm:text-[16px] lg:text-[17px] leading-relaxed sm:leading-[1.7]">
+                <div className="mb-7">
+                  <p className="max-w-[34rem] text-[var(--color-festival-text)] text-center lg:text-left font-medium text-[14px] sm:text-[16px] lg:text-[17px] leading-relaxed sm:leading-[1.7]">
                     Uma celebração da dança como linguagem artística, cultural e educativa, conectando o <strong>IF Sudeste MG - Campus Barbacena</strong> à comunidade regional.
                   </p>
                 </div>
 
                 <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
-                  <a href="#galeria" className="group inline-flex items-center gap-3 px-6 py-3.5 bg-gradient-to-r from-[var(--color-festival-primary)] to-[var(--color-festival-lilac)] text-[var(--color-festival-text-light)] rounded-full font-bold uppercase tracking-[0.16em] text-[11px] shadow-[0_10px_30px_rgba(124,58,237,0.28)] transition-all duration-300 hover:shadow-[0_14px_36px_rgba(124,58,237,0.34)]">
+                  <a href="#galeria" className="group inline-flex items-center gap-3 px-6 py-3.5 bg-gradient-to-r from-[var(--color-festival-gold)] via-[var(--color-festival-rose)] to-[var(--color-festival-primary)] text-[var(--color-festival-text-light)] rounded-full font-bold uppercase tracking-[0.16em] text-[11px] shadow-[0_10px_30px_rgba(184,138,74,0.26)] transition-all duration-300 hover:shadow-[0_14px_36px_rgba(94,54,106,0.32)]">
+                    <Images size={15} className="transition-transform duration-300 group-hover:scale-110" />
                     <span>Ver galeria</span>
-                    <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5" />
                   </a>
                   <a href="#local" className="group inline-flex items-center gap-3 px-6 py-3.5 bg-[var(--color-festival-bg)]/70 backdrop-blur-xl text-[var(--color-festival-text)] border border-[var(--color-festival-primary)]/18 rounded-full font-bold uppercase tracking-[0.16em] text-[11px] hover:bg-[var(--color-festival-bg)] hover:border-[var(--color-festival-primary)]/35 transition-all duration-300">
                     <MapPinned size={15} className="text-[var(--color-festival-primary)]" />

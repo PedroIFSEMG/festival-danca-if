@@ -1,6 +1,6 @@
 import { useState, useEffect, type MouseEvent } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Sparkles, ArrowRight, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Sparkles, Images, ArrowUpRight, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import img1 from '../assets/gallery/foto-01.jpg';
 import img2 from '../assets/gallery/foto-02.jpg';
 import img3 from '../assets/gallery/foto-03.jpg';
@@ -12,9 +12,9 @@ const images = [
   { id: 1, url: img1, span: 'md:col-span-2 md:row-span-2', title: 'Abertura do Evento', category: 'Abertura' },
   { id: 2, url: img2, span: 'md:col-span-1 md:row-span-1', title: 'Performance', category: 'Apresentação' },
   { id: 3, url: img3, span: 'md:col-span-1 md:row-span-1', title: 'Grupo', category: 'Dança' },
-  { id: 4, url: img4, span: 'md:col-span-2 md:row-span-1', title: 'Destaque', category: 'Solo' },
+  { id: 4, url: img4, span: 'md:col-span-2 md:row-span-1', title: 'Destaque', category: 'Emoção' },
   { id: 5, url: img5, span: 'md:col-span-1 md:row-span-1', title: 'Emoção', category: 'Contemporânea' },
-  { id: 6, url: img6, span: 'md:col-span-1 md:row-span-1', title: 'Movimento', category: 'Urbana' },
+  { id: 6, url: img6, span: 'md:col-span-1 md:row-span-1', title: 'Movimento', category: 'Juventude' },
 ];
 
 export default function Gallery() {
@@ -68,27 +68,28 @@ export default function Gallery() {
   };
 
   return (
-    <section className="py-8 md:py-12 relative z-10" id="galeria">
+    <section className={`py-8 md:py-12 relative ${selectedImageIndex !== null ? 'z-[100]' : 'z-10'}`} id="galeria">
       {/* Section ambient glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[520px] h-[320px] bg-[var(--color-festival-primary)]/[0.035] rounded-full blur-[80px] pointer-events-none" />
 
       <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="flex flex-col md:flex-row justify-between items-end mb-10 md:mb-12 pb-6 border-b border-[var(--color-festival-text)]/[0.06]">
-            <div className="max-w-2xl relative">
-                <Sparkles className="absolute -top-10 -left-6 text-[var(--color-festival-gold)]/20 w-12 h-12 animate-pulse" />
+        <div className="flex flex-col items-center text-center mb-10 md:mb-12 pb-6 border-b border-[var(--color-festival-text)]/[0.06]">
+            <div className="max-w-3xl relative">
+                <Sparkles className="absolute -top-10 left-1/2 -translate-x-1/2 text-[var(--color-festival-gold)]/20 w-12 h-12 animate-pulse" />
                 <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-[var(--color-festival-lilac)]/60 mb-4 block">Momentos eternizados.</span>
                 <h2 className="font-serif text-5xl md:text-7xl font-medium text-[var(--color-festival-text)] mb-4 tracking-tight">
-                  Momentos<br/><span className="italic text-[var(--color-festival-primary)] drop-shadow-sm">Eternizados</span>
+                  Momentos <span className="italic text-[var(--color-festival-primary)] drop-shadow-sm">Eternizados</span>
                 </h2>
-                <p className="text-lg md:text-xl text-[var(--color-festival-text)]/70 font-light max-w-lg mt-6">Os momentos mais marcantes capturados na última década e suas coreografias inesquecíveis.</p>
+                <p className="text-lg md:text-xl text-[var(--color-festival-text)]/70 font-light max-w-2xl mx-auto mt-6">Os momentos mais marcantes capturados na última década e suas coreografias inesquecíveis.</p>
             </div>
             <button 
               onClick={() => setSelectedImageIndex(0)}
-              className="mt-8 md:mt-0 group flex items-center space-x-3 text-[var(--color-festival-text)]/70 text-xs uppercase tracking-widest font-bold hover:text-[var(--color-festival-text)] transition-all duration-300 bg-[var(--color-festival-text)]/[0.04] backdrop-blur-xl px-8 py-4 rounded-full border border-[var(--color-festival-text)]/[0.08] hover:border-[var(--color-festival-lilac)]/30 shadow-[0_4px_20px_rgba(0,0,0,0.2)] cursor-pointer"
+              className="mt-8 group inline-flex items-center gap-3 text-[var(--color-festival-text-light)] text-xs uppercase tracking-widest font-bold transition-all duration-300 bg-gradient-to-r from-[var(--color-festival-gold)] via-[var(--color-festival-rose)] to-[var(--color-festival-primary)] px-8 py-4 rounded-full border border-white/20 hover:border-white/40 shadow-[0_12px_32px_rgba(184,138,74,0.24)] hover:shadow-[0_16px_42px_rgba(94,54,106,0.30)] cursor-pointer"
             >
+                <Images size={17} className="transition-transform duration-300 group-hover:scale-110" />
                 <span>Explorar Acervo</span>
-                <ArrowRight size={16} className="transform transition-transform" />
+                <ArrowUpRight size={16} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </button>
         </div>
 
@@ -101,23 +102,25 @@ export default function Gallery() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: index * 0.15, duration: 0.8, ease: "easeOut" }}
-              className={`glow-border relative rounded-[1.5rem] overflow-hidden group h-[300px] md:h-auto ${img.span} border border-[var(--color-festival-primary)]/45 hover:border-[var(--color-festival-primary)]/80 ring-1 ring-[var(--color-festival-primary)]/15 hover:ring-[var(--color-festival-primary)]/30 transition-all duration-300 cursor-pointer`}
+              className={`glow-border relative rounded-[1.5rem] overflow-hidden group h-[300px] md:h-auto ${img.span} border border-[var(--color-festival-gold)]/28 hover:border-[var(--color-festival-primary)]/70 ring-1 ring-[var(--color-festival-primary)]/12 hover:ring-[var(--color-festival-gold)]/28 shadow-[0_18px_48px_rgba(44,26,59,0.12)] transition-all duration-300 cursor-pointer`}
             >
               <img 
                 src={img.url} 
                 alt={img.title} 
-                className="w-full h-full object-cover transition-transform duration-700 ease-out"
+                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
               {/* Dark overlay with gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-festival-bg)]/88 via-[var(--color-festival-bg)]/22 to-transparent opacity-65 group-hover:opacity-80 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-[var(--color-festival-gold)]/42 via-[var(--color-festival-rose)]/20 to-[var(--color-festival-primary)]/36 opacity-58 mix-blend-multiply transition-opacity duration-500 group-hover:opacity-72" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#2c1a3b]/88 via-[#2c1a3b]/20 to-transparent opacity-72 group-hover:opacity-82 transition-opacity duration-300" />
               
               <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-8">
                  <div className="flex items-center space-x-2 mb-3">
-                    <span className="px-3 py-1 bg-[var(--color-festival-primary)] backdrop-blur-md text-[var(--color-festival-text-light)] text-[9px] font-bold uppercase tracking-widest rounded-full shadow-md">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-gradient-to-r from-[var(--color-festival-gold)] via-[var(--color-festival-rose)] to-[var(--color-festival-primary)] text-[var(--color-festival-text-light)] text-[9px] font-bold uppercase tracking-widest rounded-full shadow-[0_10px_24px_rgba(20,10,32,0.28)] ring-1 ring-white/25">
+                      <Sparkles size={10} />
                       {img.category}
                     </span>
                  </div>
-                 <div className="min-w-0 w-full max-w-[32rem] rounded-2xl bg-[var(--color-festival-dark)]/58 px-4 py-3 backdrop-blur-xl border border-[var(--color-festival-text-light)]/18 shadow-[0_14px_40px_rgba(44,26,59,0.28)] ring-1 ring-white/10">
+                 <div className="min-w-0 w-full max-w-[32rem] rounded-2xl bg-[#140a20]/70 px-4 py-3 backdrop-blur-xl border border-[var(--color-festival-gold)]/24 shadow-[0_14px_40px_rgba(20,10,32,0.32)] ring-1 ring-white/10 transition-colors duration-300 group-hover:border-[var(--color-festival-gold)]/42">
                    <h3 className="max-w-full overflow-hidden text-[var(--color-festival-text-light)] font-serif text-xl sm:text-2xl md:text-3xl font-medium tracking-wide leading-tight break-words [overflow-wrap:anywhere] [hyphens:auto] line-clamp-3">{img.title}</h3>
                  </div>
                  
@@ -137,7 +140,7 @@ export default function Gallery() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedImageIndex(null)}
-              className="absolute inset-0 bg-[var(--color-festival-dark)]/78 backdrop-blur-2xl cursor-pointer"
+              className="absolute inset-0 bg-[#140a20]/92 backdrop-blur-2xl cursor-pointer"
             />
 
             {/* Modal Content */}
@@ -150,37 +153,37 @@ export default function Gallery() {
             >
               <button
                 onClick={() => setSelectedImageIndex(null)}
-                className="absolute top-3 right-3 sm:top-4 sm:right-4 z-30 text-[var(--color-festival-dark)] bg-[var(--color-festival-text-light)] hover:bg-white p-3 rounded-full transition-colors border border-[var(--color-festival-dark)]/10 shadow-[0_8px_24px_rgba(44,26,59,0.28)] cursor-pointer"
+                className="absolute top-3 right-3 sm:top-4 sm:right-4 z-30 text-white bg-[#140a20]/82 hover:bg-[#2c1a3b] p-3 rounded-full transition-colors border border-white/25 shadow-[0_10px_30px_rgba(0,0,0,0.38)] cursor-pointer"
                 aria-label="Fechar"
               >
                 <X size={20} />
               </button>
 
-              <div className="relative w-full rounded-2xl overflow-hidden shadow-[0_20px_70px_rgba(12,5,20,0.35)]">
+              <div className="relative w-full overflow-hidden rounded-t-2xl border border-white/12 border-b-0 bg-[#100719] shadow-[0_20px_70px_rgba(0,0,0,0.45)]">
                 <img
                   src={images[selectedImageIndex].url}
                   alt={images[selectedImageIndex].title}
-                  className="w-full h-auto max-h-[82vh] object-contain bg-[var(--color-festival-dark)]/20"
+                  className="w-full h-auto max-h-[76vh] object-contain bg-[#100719]"
                 />
               </div>
 
-              <div className="mt-6 flex items-center justify-between w-full px-4 md:px-0">
-                <div className="text-left">
-                  <h3 className="font-serif text-2xl font-medium text-[var(--color-festival-text)]">{images[selectedImageIndex].title}</h3>
-                  <span className="text-xs uppercase tracking-widest font-bold text-[var(--color-festival-lilac)]">{images[selectedImageIndex].category}</span>
+              <div className="flex w-full flex-col gap-4 rounded-b-2xl border border-white/12 bg-[#1b0f29]/96 px-4 py-4 shadow-[0_18px_50px_rgba(0,0,0,0.35)] sm:flex-row sm:items-center sm:justify-between sm:px-6">
+                <div className="text-center sm:text-left">
+                  <h3 className="font-serif text-2xl font-medium leading-tight text-white sm:text-3xl">{images[selectedImageIndex].title}</h3>
+                  <span className="mt-2 inline-flex rounded-full border border-[var(--color-festival-gold)]/35 bg-[var(--color-festival-gold)]/14 px-3 py-1 text-[10px] uppercase tracking-[0.22em] font-bold text-[#f6dfad]">{images[selectedImageIndex].category}</span>
                 </div>
                 
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center justify-center gap-3">
                   <button 
                     onClick={prevImage}
-                    className="p-3 rounded-full bg-[var(--color-festival-text)]/[0.04] border border-[var(--color-festival-text)]/10 text-[var(--color-festival-text)]/80 hover:text-[var(--color-festival-text)] hover:bg-[var(--color-festival-text)]/10 transition-all cursor-pointer"
+                    className="p-3 rounded-full bg-white/10 border border-white/18 text-white hover:bg-white/18 hover:border-[var(--color-festival-gold)]/45 transition-all cursor-pointer"
                     aria-label="Imagem anterior"
                   >
                     <ChevronLeft size={20} />
                   </button>
                   <button 
                     onClick={nextImage}
-                    className="p-3 rounded-full bg-[var(--color-festival-text)]/[0.04] border border-[var(--color-festival-text)]/10 text-[var(--color-festival-text)]/80 hover:text-[var(--color-festival-text)] hover:bg-[var(--color-festival-text)]/10 transition-all cursor-pointer"
+                    className="p-3 rounded-full bg-white/10 border border-white/18 text-white hover:bg-white/18 hover:border-[var(--color-festival-gold)]/45 transition-all cursor-pointer"
                     aria-label="Próxima imagem"
                   >
                     <ChevronRight size={20} />

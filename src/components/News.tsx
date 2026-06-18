@@ -83,7 +83,7 @@ export default function News() {
   }, [activePost]);
 
   return (
-    <section className="py-8 md:py-12 relative z-10" id="noticias">
+    <section className={`py-8 md:py-12 relative ${activePost ? 'z-[100]' : 'z-10'}`} id="noticias">
       {/* Section ambient */}
       <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-[var(--color-festival-rose)]/[0.03] rounded-full blur-[80px] pointer-events-none" />
 

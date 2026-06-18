@@ -8,9 +8,21 @@ export default function MapSection() {
       <div className="absolute top-0 right-0 w-80 h-80 bg-[var(--color-festival-lilac)]/[0.035] rounded-full blur-[80px] transform -translate-y-1/2 translate-x-1/2 z-0" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-[var(--color-festival-primary)]/[0.03] rounded-full blur-[80px] transform translate-y-1/2 -translate-x-1/2 z-0" />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <motion.div
+           initial={{ opacity: 0, y: 20 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true }}
+           transition={{ duration: 0.8 }}
+           className="text-center mb-10 md:mb-12"
+        >
+           <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-[var(--color-festival-lilac)]/60 block mb-4">Localização</span>
+           <h2 className="font-serif text-5xl md:text-7xl font-medium text-[var(--color-festival-text)] leading-[1.1] tracking-tight">
+              Como <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-festival-primary)] to-[var(--color-festival-lilac)]">Chegar</span>
+           </h2>
+        </motion.div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_2.1fr] gap-8 lg:gap-10 items-center">
           <motion.div 
              initial={{ opacity: 0, x: -30 }}
              whileInView={{ opacity: 1, x: 0 }}
@@ -18,13 +30,6 @@ export default function MapSection() {
              transition={{ duration: 0.8 }}
              className="lg:col-span-1 space-y-6 text-center"
           >
-             <div>
-               <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-[var(--color-festival-lilac)]/60 block mb-4">Localização</span>
-               <h2 className="font-serif text-5xl md:text-7xl font-medium text-[var(--color-festival-text)] leading-[1.1] tracking-tight">
-                  Como <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-festival-primary)] to-[var(--color-festival-lilac)]">Chegar</span>
-               </h2>
-             </div>
-             
              <div className="glow-border bg-[var(--color-festival-bg)]/60 backdrop-blur-xl p-6 sm:p-8 rounded-[1.5rem] border border-[var(--color-festival-text)]/[0.06] space-y-6 text-left">
                 <div className="flex items-start space-x-4 sm:space-x-5">
                    <div className="bg-gradient-to-br from-[var(--color-festival-primary)] to-[var(--color-festival-lilac)] p-4 rounded-2xl text-[var(--color-festival-text-light)] shrink-0 shadow-[0_8px_25px_rgba(124,58,237,0.3)]">
