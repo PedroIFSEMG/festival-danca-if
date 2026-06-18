@@ -26,8 +26,30 @@ export default function Gallery() {
     } else {
       document.body.style.overflow = '';
     }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (selectedImageIndex === null) return;
+
+      if (event.key === 'Escape') {
+        setSelectedImageIndex(null);
+      }
+
+      if (event.key === 'ArrowRight') {
+        setSelectedImageIndex((selectedImageIndex + 1) % images.length);
+      }
+
+      if (event.key === 'ArrowLeft') {
+        setSelectedImageIndex((selectedImageIndex - 1 + images.length) % images.length);
+      }
+    };
+
+    if (selectedImageIndex !== null) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+
     return () => {
       document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
     };
   }, [selectedImageIndex]);
 
@@ -46,18 +68,18 @@ export default function Gallery() {
   };
 
   return (
-    <section className="py-10 relative z-10" id="galeria">
+    <section className="py-8 md:py-12 relative z-10" id="galeria">
       {/* Section ambient glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[520px] h-[320px] bg-[var(--color-festival-primary)]/[0.035] rounded-full blur-[80px] pointer-events-none" />
 
       <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 pb-6 border-b border-[var(--color-festival-text)]/[0.06]">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-10 md:mb-12 pb-6 border-b border-[var(--color-festival-text)]/[0.06]">
             <div className="max-w-2xl relative">
                 <Sparkles className="absolute -top-10 -left-6 text-[var(--color-festival-gold)]/20 w-12 h-12 animate-pulse" />
-                <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-[var(--color-festival-lilac)]/60 mb-4 block">Momentos Eternizados</span>
+                <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-[var(--color-festival-lilac)]/60 mb-4 block">Momentos eternizados.</span>
                 <h2 className="font-serif text-5xl md:text-7xl font-medium text-[var(--color-festival-text)] mb-4 tracking-tight">
-                  Memórias em<br/><span className="italic text-[var(--color-festival-primary)] drop-shadow-sm">Foco</span>
+                  Momentos<br/><span className="italic text-[var(--color-festival-primary)] drop-shadow-sm">Eternizados</span>
                 </h2>
                 <p className="text-lg md:text-xl text-[var(--color-festival-text)]/70 font-light max-w-lg mt-6">Os momentos mais marcantes capturados na última década e suas coreografias inesquecíveis.</p>
             </div>
@@ -108,14 +130,14 @@ export default function Gallery() {
       {/* Lightbox Modal */}
       <AnimatePresence>
         {selectedImageIndex !== null && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <div className="fixed inset-0 z-[1000] flex items-center justify-center p-2 sm:p-4">
             {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedImageIndex(null)}
-              className="absolute inset-0 bg-[var(--color-festival-bg)]/90 backdrop-blur-xl cursor-pointer"
+              className="absolute inset-0 bg-[var(--color-festival-dark)]/78 backdrop-blur-2xl cursor-pointer"
             />
 
             {/* Modal Content */}
@@ -124,21 +146,21 @@ export default function Gallery() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative w-full max-w-5xl max-h-[90vh] flex flex-col items-center justify-center z-10"
+              className="relative w-full max-w-[96rem] max-h-[94vh] flex flex-col items-center justify-center z-10"
             >
               <button
                 onClick={() => setSelectedImageIndex(null)}
-                className="fixed top-20 right-4 sm:top-4 z-30 text-[var(--color-festival-dark)] bg-[var(--color-festival-text-light)] hover:bg-white p-3 rounded-full transition-colors border border-[var(--color-festival-dark)]/10 shadow-[0_8px_24px_rgba(44,26,59,0.28)] cursor-pointer"
+                className="absolute top-3 right-3 sm:top-4 sm:right-4 z-30 text-[var(--color-festival-dark)] bg-[var(--color-festival-text-light)] hover:bg-white p-3 rounded-full transition-colors border border-[var(--color-festival-dark)]/10 shadow-[0_8px_24px_rgba(44,26,59,0.28)] cursor-pointer"
                 aria-label="Fechar"
               >
                 <X size={20} />
               </button>
 
-              <div className="relative w-full rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(124,58,237,0.2)]">
+              <div className="relative w-full rounded-2xl overflow-hidden shadow-[0_20px_70px_rgba(12,5,20,0.35)]">
                 <img
                   src={images[selectedImageIndex].url}
                   alt={images[selectedImageIndex].title}
-                  className="w-full h-auto max-h-[80vh] object-contain bg-[var(--color-festival-dark)]/5"
+                  className="w-full h-auto max-h-[82vh] object-contain bg-[var(--color-festival-dark)]/20"
                 />
               </div>
 
@@ -152,12 +174,14 @@ export default function Gallery() {
                   <button 
                     onClick={prevImage}
                     className="p-3 rounded-full bg-[var(--color-festival-text)]/[0.04] border border-[var(--color-festival-text)]/10 text-[var(--color-festival-text)]/80 hover:text-[var(--color-festival-text)] hover:bg-[var(--color-festival-text)]/10 transition-all cursor-pointer"
+                    aria-label="Imagem anterior"
                   >
                     <ChevronLeft size={20} />
                   </button>
                   <button 
                     onClick={nextImage}
                     className="p-3 rounded-full bg-[var(--color-festival-text)]/[0.04] border border-[var(--color-festival-text)]/10 text-[var(--color-festival-text)]/80 hover:text-[var(--color-festival-text)] hover:bg-[var(--color-festival-text)]/10 transition-all cursor-pointer"
+                    aria-label="Próxima imagem"
                   >
                     <ChevronRight size={20} />
                   </button>

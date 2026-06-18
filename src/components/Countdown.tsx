@@ -40,7 +40,7 @@ export default function Countdown() {
   ];
 
   return (
-    <section className="py-10 relative overflow-hidden">
+    <section className="py-8 md:py-10 relative overflow-hidden">
       {/* Section gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--color-festival-primary)]/[0.03] to-transparent pointer-events-none z-0" />
       
@@ -57,7 +57,7 @@ export default function Countdown() {
         >
             <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-[var(--color-festival-lilac)]/60 block mb-4">Contagem Regressiva</span>
             <h2 className="font-serif text-5xl md:text-7xl font-medium mb-3 tracking-wide text-[var(--color-festival-text)]">Próximo <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-festival-gold)] to-[var(--color-festival-rose)]">Evento</span></h2>
-            <p className="text-[var(--color-festival-text)]/60 tracking-[0.2em] uppercase text-xs lg:text-sm font-bold mb-16"><span className="font-roman text-[var(--color-festival-gold)] pr-0.5 select-none">X</span> Festival de Dança • Campus Barbacena</p>
+            <p className="text-[var(--color-festival-text)]/60 tracking-[0.2em] uppercase text-xs lg:text-sm font-bold mb-10 md:mb-12"><span className="font-roman text-[var(--color-festival-gold)] pr-0.5 select-none">X</span> Festival de Dança • Campus Barbacena</p>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto">
                 {items.map((item) => (
@@ -80,7 +80,7 @@ export default function Countdown() {
       </div>
 
       {/* Gradient divider line */}
-      <div className="section-divider max-w-4xl mx-auto mt-28" />
+      <div className="section-divider max-w-4xl mx-auto mt-16 md:mt-20" />
     </section>
   );
 }

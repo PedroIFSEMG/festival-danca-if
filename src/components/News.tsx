@@ -65,13 +65,25 @@ export default function News() {
     } else {
       document.body.style.overflow = '';
     }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setActivePost(null);
+      }
+    };
+
+    if (activePost) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+
     return () => {
       document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
     };
   }, [activePost]);
 
   return (
-    <section className="py-10 relative z-10" id="noticias">
+    <section className="py-8 md:py-12 relative z-10" id="noticias">
       {/* Section ambient */}
       <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-[var(--color-festival-rose)]/[0.03] rounded-full blur-[80px] pointer-events-none" />
 
@@ -144,14 +156,14 @@ export default function News() {
       {/* Post Modal Portal/Overlay */}
       <AnimatePresence>
         {activePost && (
-          <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 sm:p-6 md:p-10">
+          <div className="fixed inset-0 z-[1000] flex items-center justify-center p-2 sm:p-4">
             {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setActivePost(null)}
-              className="absolute inset-0 bg-[var(--color-festival-bg)]/80 backdrop-blur-xl cursor-pointer"
+              className="absolute inset-0 bg-[var(--color-festival-dark)]/72 backdrop-blur-2xl cursor-pointer"
             />
 
             {/* Modal Content */}
@@ -160,7 +172,7 @@ export default function News() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative bg-[var(--color-festival-dark-surface)] rounded-[1.5rem] sm:rounded-[2rem] border border-[var(--color-festival-lilac-light)]/30 shadow-[0_25px_80px_rgba(44,26,59,0.22)] w-full max-w-4xl max-h-[85vh] overflow-hidden z-10 flex flex-col"
+              className="relative bg-[var(--color-festival-dark-surface)] rounded-[1.25rem] sm:rounded-[1.75rem] border border-[var(--color-festival-lilac-light)]/30 shadow-[0_25px_90px_rgba(12,5,20,0.42)] w-full max-w-6xl max-h-[94vh] overflow-hidden z-10 flex flex-col"
             >
               {/* Close button */}
               <button
@@ -173,7 +185,7 @@ export default function News() {
 
               <div className="overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                 {/* Banner Image */}
-                <div className="relative h-64 sm:h-96 w-full shrink-0 overflow-hidden">
+                <div className="relative h-56 sm:h-80 md:h-[26rem] w-full shrink-0 overflow-hidden">
                   <PostImage
                     src={activePost.img}
                     title={activePost.title}
@@ -184,7 +196,7 @@ export default function News() {
                 </div>
 
                 {/* Body Content */}
-                <div className="p-6 sm:p-12 pt-4 flex-grow flex flex-col justify-start">
+                <div className="p-6 sm:p-8 md:p-10 pt-4 flex-grow flex flex-col justify-start">
                   <div className="flex items-center space-x-3 mb-6 pr-12">
                     <span className="px-3 py-1 bg-[var(--color-festival-text-light)] text-[var(--color-festival-dark)] text-[9px] font-bold uppercase tracking-widest rounded-full">
                       {activePost.category}

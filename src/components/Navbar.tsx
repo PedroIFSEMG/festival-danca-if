@@ -15,17 +15,18 @@ export default function Navbar() {
   ];
 
   return (
-    <div className="fixed top-3 inset-x-0 z-50 flex flex-col items-center px-4">
+    <div className="fixed top-3 inset-x-0 z-50 flex flex-col items-center px-4 pointer-events-none">
 
       {/* ── Pill bar ─────────────────────────────────────────────────── */}
       <nav className="
         w-[90%] md:w-fit md:max-w-[calc(100vw-2rem)]
         rounded-full
-        bg-[var(--color-festival-bg)]/58 backdrop-blur-2xl
-        border border-white/35
-        shadow-[0_18px_50px_rgba(44,26,59,0.16),inset_0_1px_0_rgba(255,255,255,0.45)]
+        bg-[var(--color-festival-bg)]/72 backdrop-blur-2xl
+        border border-white/45
+        shadow-[0_18px_50px_rgba(44,26,59,0.18),inset_0_1px_0_rgba(255,255,255,0.55)]
         ring-1 ring-[var(--color-festival-primary)]/10
         px-3 py-2
+        pointer-events-auto
       ">
         <div className="flex items-center justify-between md:justify-start gap-2 sm:gap-3 relative">
 
@@ -89,7 +90,7 @@ export default function Navbar() {
 
       {/* ── Mobile dropdown ──────────────────────────────────────────── */}
       {isOpen && (
-        <div className="md:hidden mt-2 w-[90%] rounded-[1.5rem] bg-[var(--color-festival-bg)]/68 backdrop-blur-2xl border border-white/35 shadow-[0_18px_50px_rgba(44,26,59,0.16),inset_0_1px_0_rgba(255,255,255,0.45)] overflow-hidden">
+        <div className="md:hidden mt-2 w-[90%] rounded-[1.5rem] bg-[var(--color-festival-bg)]/82 backdrop-blur-2xl border border-white/45 shadow-[0_18px_50px_rgba(44,26,59,0.18),inset_0_1px_0_rgba(255,255,255,0.55)] overflow-hidden pointer-events-auto">
           <div className="px-5 py-5 flex flex-col items-stretch gap-1">
             {navItems.map((item) => (
               <a

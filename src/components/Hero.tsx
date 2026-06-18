@@ -3,7 +3,7 @@ import { ArrowDown, ArrowRight, MapPinned } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-20 pb-4 lg:pt-24">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-20 pb-8 lg:pt-24">
       {/* Radial spotlight behind dancer */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[radial-gradient(ellipse_at_center,rgba(124,58,237,0.15)_0%,transparent_70%)] pointer-events-none z-0" />
 
@@ -53,7 +53,7 @@ export default function Hero() {
           </div>
 
           {/* Typography / Content Side */}
-          <div className="lg:col-span-5 order-3 lg:order-1 flex flex-col items-center lg:items-start text-center lg:text-left mt-8 lg:mt-0">
+          <div className="lg:col-span-5 order-3 lg:order-1 flex flex-col items-center lg:items-start text-center lg:text-left mt-6 lg:mt-0">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -76,7 +76,7 @@ export default function Hero() {
               </h1>
 
               <div className="max-w-xl mx-auto lg:mx-0">
-                <div className="grid grid-cols-1 sm:grid-cols-[minmax(8.5rem,10rem)_1fr] items-center gap-4 sm:gap-6 mb-8">
+                <div className="grid grid-cols-1 sm:grid-cols-[minmax(8.5rem,10rem)_1fr] items-center gap-4 sm:gap-6 mb-7">
                   <div className="relative z-20 flex min-h-[8.5rem] w-full max-w-[11rem] sm:max-w-none mx-auto sm:mx-0 flex-col items-center justify-center overflow-hidden rounded-2xl bg-[var(--color-festival-bg)]/45 px-4 pt-4 pb-3 border border-[var(--color-festival-primary)]/20 shadow-[0_10px_30px_rgba(44,26,59,0.12)]">
                     <span className="text-[var(--color-festival-primary)] font-bold uppercase tracking-[0.28em] text-[10px] lg:text-xs">Data</span>
                     <span className="font-serif text-[2.75rem] sm:text-5xl lg:text-[3.8rem] leading-none font-bold text-transparent bg-clip-text bg-gradient-to-br from-[var(--color-festival-primary)] to-[var(--color-festival-lilac)]">27-28</span>
@@ -97,27 +97,26 @@ export default function Hero() {
                     <span>Como chegar</span>
                   </a>
                 </div>
+
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1.5, duration: 1 }}
+                  className="mt-8 lg:mt-10 flex flex-col items-center lg:items-start text-[var(--color-festival-text)]/60"
+                >
+                  <span className="text-[10px] uppercase tracking-[0.3em] font-bold mb-2">Deslize</span>
+                  <motion.div
+                    animate={{ y: [0, 8, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <ArrowDown size={20} strokeWidth={1} />
+                  </motion.div>
+                </motion.div>
               </div>
             </motion.div>
           </div>
         </div>
       </div>
-
-      {/* Scroll Down Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="mt-10 lg:mt-14 flex flex-col items-center text-[var(--color-festival-text)]/60 self-center"
-      >
-        <span className="text-[10px] uppercase tracking-[0.3em] font-bold mb-2">Deslize</span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <ArrowDown size={20} strokeWidth={1} />
-        </motion.div>
-      </motion.div>
     </section>
   );
 }

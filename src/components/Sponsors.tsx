@@ -6,11 +6,11 @@ export default function Sponsors() {
   }
 
   return (
-    <section id="sponsors" className="py-10 relative overflow-hidden">
+    <section id="sponsors" className="py-8 md:py-10 relative overflow-hidden">
       {/* Gradient line top */}
-      <div className="section-divider max-w-4xl mx-auto mb-16" />
+      <div className="section-divider max-w-4xl mx-auto mb-10 md:mb-12" />
 
-      <div className="max-w-7xl mx-auto px-4 mb-12 text-center relative z-10">
+      <div className="max-w-7xl mx-auto px-4 mb-8 md:mb-10 text-center relative z-10">
         <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-[var(--color-festival-lilac)]/60 block mb-4">Parceiros de Destaque</span>
         <h3 className="font-serif text-3xl md:text-5xl font-medium text-[var(--color-festival-text)]">
           Apoiadores &amp; <span className="italic text-[var(--color-festival-primary)]">Patrocinadores</span>
@@ -44,7 +44,7 @@ export default function Sponsors() {
       </div>
 
       {/* Gradient line bottom */}
-      <div className="section-divider max-w-4xl mx-auto mt-16" />
+      <div className="section-divider max-w-4xl mx-auto mt-10 md:mt-12" />
     </section>
   );
 }

@@ -20,12 +20,12 @@ export default function App() {
       <BackgroundBlobs />
       <Navbar />
       <Hero />
-      <Countdown />
       <ActionGrid />
-      <Sponsors />
-      <Gallery />
-      <News />
+      <Countdown />
       <MapSection />
+      <Gallery />
+      <Sponsors />
+      <News />
       <Footer />
     </div>
   );
