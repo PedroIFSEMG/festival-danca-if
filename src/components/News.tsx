@@ -93,7 +93,7 @@ export default function News() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12 md:mb-16"
+          className="text-center md:text-left mb-12 md:mb-16"
         >
           <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-[var(--color-festival-lilac)]/60 block mb-4">Fique por dentro</span>
           <h2 className="font-serif text-5xl md:text-7xl font-medium text-[var(--color-festival-text)] tracking-tight">

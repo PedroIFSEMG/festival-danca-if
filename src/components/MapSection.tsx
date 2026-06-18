@@ -14,7 +14,7 @@ export default function MapSection() {
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true }}
            transition={{ duration: 0.8 }}
-           className="text-center mb-10 md:mb-12"
+           className="text-center md:text-left mb-10 md:mb-12"
         >
            <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-[var(--color-festival-lilac)]/60 block mb-4">Localização</span>
            <h2 className="font-serif text-5xl md:text-7xl font-medium text-[var(--color-festival-text)] leading-[1.1] tracking-tight">
@@ -30,12 +30,12 @@ export default function MapSection() {
              transition={{ duration: 0.8 }}
              className="lg:col-span-1 space-y-6 text-center"
           >
-             <div className="glow-border bg-[var(--color-festival-bg)]/60 backdrop-blur-xl p-6 sm:p-8 rounded-[1.5rem] border border-[var(--color-festival-text)]/[0.06] space-y-6 text-left">
-                <div className="flex items-start space-x-4 sm:space-x-5">
+             <div className="glow-border bg-[var(--color-festival-bg)]/60 backdrop-blur-xl p-6 sm:p-8 rounded-[1.5rem] border border-[var(--color-festival-text)]/[0.06] space-y-6 text-center">
+                <div className="flex flex-col items-center">
                    <div className="bg-gradient-to-br from-[var(--color-festival-primary)] to-[var(--color-festival-lilac)] p-4 rounded-2xl text-[var(--color-festival-text-light)] shrink-0 shadow-[0_8px_25px_rgba(124,58,237,0.3)]">
                       <MapPin size={22} strokeWidth={2} />
                    </div>
-                   <div>
+                   <div className="mt-4">
                       <h4 className="font-serif text-2xl font-medium text-[var(--color-festival-text)] mb-2">Auditório EPCAr</h4>
                       <p className="text-[var(--color-festival-text)]/70 font-light text-sm leading-relaxed font-sans">
                         Escola Preparatória de Cadetes do Ar<br/>

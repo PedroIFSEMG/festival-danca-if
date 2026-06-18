@@ -79,7 +79,7 @@ export default function ActionGrid() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="mb-10 text-center md:mb-12"
+        className="mb-10 text-center md:mb-12 md:text-left"
       >
         <span className="mb-4 block text-[10px] font-bold uppercase tracking-[0.3em] text-[var(--color-festival-lilac)]/70">
           Conheça mais
@@ -87,7 +87,7 @@ export default function ActionGrid() {
         <h2 className="font-serif text-4xl font-medium tracking-tight text-[var(--color-festival-text)] sm:text-5xl md:text-7xl">
           Nossa <span className="italic text-[var(--color-festival-primary)] drop-shadow-sm">Essência</span>
         </h2>
-        <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-[var(--color-festival-text)]/68 sm:text-base">
+        <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-[var(--color-festival-text)]/68 sm:text-base md:mx-0">
           Três forças sustentam o festival: memória, bastidor e presença coletiva no palco.
         </p>
       </motion.div>
@@ -127,10 +127,6 @@ export default function ActionGrid() {
 
             <div className="relative flex flex-1 flex-col justify-between p-6 sm:p-7">
               <div>
-                <span className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-[var(--color-festival-gold)]/24 bg-[linear-gradient(90deg,rgba(184,138,74,0.14),rgba(94,54,106,0.09))] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em] text-[var(--color-festival-primary)]">
-                  <Sparkles size={11} className="text-[var(--color-festival-gold)]" />
-                  Essência
-                </span>
                 <h3 className="font-serif text-3xl font-medium leading-tight tracking-wide text-[var(--color-festival-text)]">
                   {action.title}
                 </h3>

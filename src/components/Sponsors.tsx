@@ -10,7 +10,7 @@ export default function Sponsors() {
       {/* Gradient line top */}
       <div className="section-divider max-w-4xl mx-auto mb-10 md:mb-12" />
 
-      <div className="max-w-7xl mx-auto px-4 mb-8 md:mb-10 text-center relative z-10">
+      <div className="max-w-7xl mx-auto px-4 mb-8 md:mb-10 text-center md:text-left relative z-10">
         <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-[var(--color-festival-lilac)]/60 block mb-4">Parceiros de Destaque</span>
         <h3 className="font-serif text-3xl md:text-5xl font-medium text-[var(--color-festival-text)]">
           Apoiadores &amp; <span className="italic text-[var(--color-festival-primary)]">Patrocinadores</span>

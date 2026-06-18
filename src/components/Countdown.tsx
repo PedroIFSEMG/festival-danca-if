@@ -48,7 +48,7 @@ export default function Countdown() {
       <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-[var(--color-festival-primary)]/[0.08] rounded-full blur-[80px] z-0" />
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[var(--color-festival-primary)]/[0.05] rounded-full blur-[80px] z-0" />
       
-      <div className="max-w-5xl mx-auto px-4 relative z-10 text-center">
+      <div className="max-w-5xl mx-auto px-4 relative z-10 text-center md:text-left">
         <motion.div
            initial={{ opacity: 0, y: 20 }}
            whileInView={{ opacity: 1, y: 0 }}
