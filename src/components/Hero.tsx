@@ -4,6 +4,11 @@ import { ArrowDown, Images, MapPinned } from 'lucide-react';
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-20 pb-8 lg:pt-24">
+      <div className="stage-spotlights" aria-hidden="true">
+        <span className="stage-spotlight stage-spotlight-left" />
+        <span className="stage-spotlight stage-spotlight-right" />
+      </div>
+
       {/* Radial spotlight behind dancer */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[radial-gradient(ellipse_at_center,rgba(124,58,237,0.15)_0%,transparent_70%)] pointer-events-none z-0" />
 
